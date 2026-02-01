@@ -1,0 +1,19 @@
+index.html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Biervergnügen</title>
+</head>
+<body>
+  <h1>Biervergnügen</h1>
+  <p>
+    Braukurese & Bierverkostungen
+  </p>
+
+  <p>
+    Buchung bitte per E-Mail:<br>
+    <a href="mailto:borgschultemarkus@gmail.com">deine@mailadresse.de</a>
+  </p>
+</body>
+</html>
