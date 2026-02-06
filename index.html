@@ -1,27 +1,109 @@
-index.html
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Biervergnügen</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biervergnügen | Braukurse & Bierverkostungen</title>
+    <style>
+        /* Das Design (CSS) */
+        :root {
+            --primary: #d35400; /* Bier-Bernstein */
+            --secondary: #f39c12; /* Schaum-Gold */
+            --dark: #2c3e50; /* Dunkles Malz */
+            --light: #fdfaf6; /* Papier/Hintergrund */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light);
+            color: var(--dark);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            color: var(--secondary);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            flex: 1;
+            text-align: center;
+        }
+
+        .btn {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 1.5rem;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary);
+        }
+
+        footer {
+            background: #eee;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--dark);
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        /* Mobile Anpassung */
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+            .container { padding: 1rem; }
+        }
+    </style>
 </head>
 <body>
-  <h1>Biervergnügen</h1>
-  <p>
-    Braukurese & Bierverkostungen
-  </p>
 
-  <p>
-    Buchung bitte per E-Mail:<br>
-    <a href="mailto:borgschultemarkus@gmail.com">deine@mailadresse.de</a>
-  </p>
+    <header>
+        <h1>BIERVERGNÜGEN 🍻</h1>
+        <p>Handwerk erleben. Geschmack entdecken.</p>
+    </header>
 
-<hr>
+    <div class="container">
+        <h2>Braukurse & Bierverkostungen</h2>
+        <p>Suchst du ein individuelles Event?</p>
+        
+        <p>Schreib mir einfach eine Email – ich freue mich auf den Austausch!</p>
+        
+        <a href="mailto:biervergnuegen@gmail.com" class="btn">Anfrage senden</a>
+    </div>
 
-<p>
-<a href="impressum.html">Impressum</a> |
-<a href="datenschutz.html">Datenschutz</a>
-</p>
-  
+    <footer>
+        <p>&copy; 2026 Biervergnügen</p>
+        <a href="impressum.html">Impressum</a> | 
+        <a href="datenschutz.html">Datenschutz</a>
+    </footer>
+
 </body>
 </html>
