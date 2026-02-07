@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biervergnügen | Handwerk. Sinn. Erlebnis.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --copper: #b87333;
+            --dark-malt: #1a0f0a; /* Das satte Honecker-Braun */
+            --light-gold: #e5c185;
+            --text: #f5f5f5;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark-malt);
+            color: var(--text);
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Hintergrund-Effekt: Aufsteigende Kohlensäure */
+        .bubbles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+        }
+
+        .bubble {
+            position: absolute;
+            bottom: -20px;
+            background: rgba(184, 115, 51, 0.2);
+            border-radius: 50%;
+            animation: rise 10s infinite ease-in;
+        }
+
+        @keyframes rise {
+            0% { transform: translateY(0); opacity: 0; }
+            50% { opacity: 0.3; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 2rem;
+            gap: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--copper); }
+
+        /* Header / Logo Bereich */
+        header {
+            text-align: center;
+            padding: 5vh 1rem;
+        }
+
+        .logo-placeholder {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            color: var(--copper);
+            margin: 0;
+            line-height: 1;
+        }
+
+        .logo-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 2.5rem;
+            margin-top: -10px;
+            color: var(--light-gold);
+        }
+
+        .slogan {
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font-weight: 300;
+            margin-top: 2rem;
+            color: var(--copper);
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        h2 { font-family: 'Playfair Display', serif; font-size: 2rem; }
+
+        .btn-gold {
+            border: 1px solid var(--copper);
+            padding: 1rem 2rem;
+            color: var(--copper);
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 2rem;
+            transition: all 0.4s;
+        }
+
+        .btn-gold:hover {
+            background: var(--copper);
+            color: var(--dark-malt);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bubbles" id="bubble-container"></div>
+
+    <nav>
+        <a href="#about">Die Manufaktur</a>
+        <a href="#braukunst">Braukunst</a>
+        <a href="#sensorik">Sensorik</a>
+        <a href="#logbuch">Logbuch</a>
+    </nav>
+
+    <header>
+        <div class="logo-placeholder">B</div>
+        <div class="logo-subtitle">Biervergnügen</div>
+        <div class="slogan">Handwerk • Sinn • Erlebnis</div>
+    </header>
+
+    <div class="content">
+        <h2>Willkommen in der Werkstatt des Genusses.</h2>
+        <p>Erlebe die Präzision eines restaurierten Handwerks. Von der Auswahl der Hopfendolde bis zum ersten Schluck deines eigenen Kreation.</p>
+        <a href="mailto:anfrage@biervergnuegen.com" class="btn-gold">Anfrage senden</a>
+    </div>
+
+    <script>
+        // Kleines Skript für die Blasen-Animation
+        const container = document.getElementById('bubble-container');
+        for (let i = 0; i < 20; i++) {
+            const bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            const size = Math.random() * 15 + 5 + 'px';
+            bubble.style.width = size;
+            bubble.style.height = size;
+            bubble.style.left = Math.random() * 100 + 'vw';
+            bubble.style.animationDuration = Math.random() * 5 + 5 + 's';
+            bubble.style.animationDelay = Math.random() * 5 + 's';
+            container.appendChild(bubble);
+        }
+    </script>
+</body>
+</html>
