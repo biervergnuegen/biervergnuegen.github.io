@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Logbuch | Biervergnügen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --copper: #b87333; --dark: #1a0f0a; --text: #f5f5f5; }
+        body { background: var(--dark); color: var(--text); font-family: 'Montserrat', sans-serif; text-align: center; padding-top: 100px; }
+        h1 { font-family: 'Playfair Display', serif; color: var(--copper); font-size: 3rem; }
+        .login-box { max-width: 400px; margin: 0 auto; padding: 20px; border: 1px solid var(--copper); }
+        input { background: transparent; border: 1px solid var(--copper); color: white; padding: 10px; width: 80%; margin-bottom: 20px; text-align: center; }
+        button { background: var(--copper); border: none; color: var(--dark); padding: 10px 20px; cursor: pointer; text-transform: uppercase; font-weight: bold; }
+        .error { color: #e74c3c; display: none; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <h1>Kabinett & Logbuch</h1>
+    <p>Bitte gib das Zugangswort aus deinem Braukurs ein:</p>
+
+    <div class="login-box">
+        <input type="password" id="passwort" placeholder="Zugangswort">
+        <br>
+        <button onclick="checkAccess()">Eintreten</button>
+        <div id="error-msg" class="error">Das Wort ist leider nicht korrekt.</div>
+    </div>
+
+    <script>
+        function checkAccess() {
+            const pw = document.getElementById('passwort').value.toLowerCase().trim();
+            
+            // Wenn das Passwort "hopfen" ist, leite zum Ordner weiter
+            if (pw === "hopfen") {
+                window.location.href = "geheimnis_2026/index.html"; 
+            } else {
+                document.getElementById('error-msg').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
