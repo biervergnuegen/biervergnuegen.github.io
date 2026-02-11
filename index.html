@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biervergnügen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --copper: #b87333;
+            --dark-malt: #1a0f0a;
+            --light-gold: #e5c185;
+            --text: #f5f5f5;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark-malt);
+            color: var(--text);
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Hintergrund-Effekt: Aufsteigende Kohlensäure */
+        .bubbles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+        }
+
+        .bubble {
+            position: absolute;
+            bottom: -20px;
+            background: rgba(184, 115, 51, 0.2);
+            border-radius: 50%;
+            animation: rise 10s infinite ease-in;
+        }
+
+        @keyframes rise {
+            0% { transform: translateY(0); opacity: 0; }
+            50% { opacity: 0.3; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 2rem;
+            gap: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--copper); }
+
+        /* Header / Logo Bereich */
+        header {
+            text-align: center;
+            padding: 5vh 1rem;
+        }
+
+        .logo-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Hier kannst du später dein Bild einsetzen */
+        .logo-placeholder {
+            font-family: 'Playfair Display', serif;
+            font-size: 6rem;
+            color: var(--copper);
+            margin: 0;
+            line-height: 1;
+            position: relative;
+        }
+
+        .hopfen-icon {
+            width: 50px; /* Breite deiner Grafik */
+            height: auto;
+            vertical-align: middle;
+            margin-left: -10px; /* Schiebt das Bild leicht ins B */
+        }
+
+        .logo-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 2.8rem;
+            margin-top: -10px;
+            color: var(--light-gold);
+        }
+
+        .slogan {
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font-weight: 300;
+            margin-top: 2rem;
+            color: var(--copper);
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 2rem;
+            flex: 1;
+        }
+
+        h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--light-gold); }
+
+        .btn-gold {
+            border: 1px solid var(--copper);
+            padding: 1rem 2rem;
+            color: var(--copper);
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 2rem;
+            transition: all 0.4s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .btn-gold:hover {
+            background: var(--copper);
+            color: var(--dark-malt);
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(184, 115, 51, 0.3);
+            font-size: 0.75rem;
+            text-align: center;
+            opacity: 0.7;
+        }
+
+        footer a {
+            color: var(--text);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        footer a:hover { color: var(--copper); }
+    </style>
+</head>
+<body>
+
+    <div class="bubbles" id="bubble-container"></div>
+
+    <nav>
+        <a href="mich.html">Über mich</a>
+        <a href="braukunst.html">Braukunst</a>
+        <a href="sensorik.html">Sensorik</a>
+        <a href="downloads.html">Downloads</a>
+    </nav>
+
+    <header>
+        <div class="logo-area">
+            <div class="logo-placeholder">
+                B<img src="hopfen.png" alt="🌿" class="hopfen-icon"> 
+                </div>
+            <div class="logo-subtitle">Biervergnügen</div>
+            <div class="slogan">Handwerk erleben. Geschmack entdecken.</div>
+        </div>
+    </header>
+
+    <div class="content">
+        <h2>Braukurse & Bierverkostungen in München und Kreis Soest</h2>
+        
+        <p>Aktuell biete ich Veranstaltungen bei der VHS Lippstadt und VHS Soest an; schau dort mal ins Programm.</p>
+
+        <p>Oder suchst du ein individuelles Event?</p>
+        <p>Schreib mir einfach eine E-Mail!</p>
+        
+        <a href="mailto:biervergnuegen@gmail.com" class="btn-gold">Anfrage senden</a>
+    </div>
+
+    <footer>
+        <a href="impressum.html">Impressum</a> | 
+        <a href="datenschutz.html">Datenschutz</a>
+        <p style="margin-top: 15px;">&copy; 2026 Biervergnügen — Handwerk. Sinn. Erlebnis.</p>
+    </footer>
+
+    <script>
+        const container = document.getElementById('bubble-container');
+        for (let i = 0; i < 20; i++) {
+            const bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            const size = Math.random() * 15 + 5 + 'px';
+            bubble.style.width = size;
+            bubble.style.height = size;
+            bubble.style.left = Math.random() * 100 + 'vw';
+            bubble.style.animationDuration = Math.random() * 5 + 5 + 's';
+            bubble.style.animationDelay = Math.random() * 5 + 's';
+            container.appendChild(bubble);
+        }
+    </script>
+    
+</body>
+</html>
