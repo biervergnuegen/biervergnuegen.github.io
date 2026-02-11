@@ -1,1 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Über mich | Biervergnügen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --copper: #b87333;
+            --dark-malt: #1a0f0a;
+            --light-gold: #e5c185;
+            --text: #f5f5f5;
+        }
 
+        body {
+            margin: 0;
+            background-color: var(--dark-malt);
+            color: var(--text);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 2rem 1rem;
+            gap: 1rem 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+        }
+
+        nav a { color: var(--text); text-decoration: none; transition: color 0.3s; }
+        nav a:hover { color: var(--copper); }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            flex: 1;
+        }
+
+        h1 { font-family: 'Playfair Display', serif; color: var(--light-gold); font-size: 3rem; text-align: center; margin-bottom: 3rem; }
+
+        .profile-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: auto;
+            border: 1px solid var(--copper);
+            filter: grayscale(20%);
+        }
+
+        .profile-text h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--copper);
+            margin-top: 0;
+        }
+
+        .philosophy-box {
+            background: rgba(184, 115, 51, 0.05);
+            padding: 1.5rem;
+            border-left: 2px solid var(--copper);
+            margin: 2rem 0;
+            font-style: italic;
+        }
+
+        .feedback-quote {
+            margin-top: 3rem;
+            padding: 2rem;
+            border-top: 1px solid rgba(184, 115, 51, 0.2);
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--light-gold);
+        }
+
+        footer { text-align: center; padding: 3rem; opacity: 0.6; font-size: 0.8rem; }
+
+        @media (max-width: 800px) {
+            .profile-section { grid-template-columns: 1fr; gap: 2rem; }
+            h1 { font-size: 2.2rem; }
+            nav a { flex: 0 1 40%; border: 1px solid rgba(184,115,51,0.2); padding: 8px; font-size: 0.7rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="mich.html" style="color: var(--copper);">Über mich</a>
+        <a href="braukunst.html">Braukunst</a>
+        <a href="sensorik.html">Verkostung</a>
+        <a href="downloads.html">Downloads</a>
+    </nav>
+
+    <div class="container">
+        <h1>Markus Borgschulte</h1>
+
+        <div class="profile-section">
+            <div class="profile-image">
+                <img src="international-beer-sommelier-markus-borgschulte.jpg" alt="Markus Borgschulte Biersommelier">
+            </div>
+
+            <div class="profile-text">
+                <h2>Biersommelier & Hobbybrauer</h2>
+                <p>Seit 2009 widme ich mich der Kunst des Brauens. Gelernt bei einer Braumeisterin der Augustiner Brauerei in München, hat mich die Faszination für Charakterbiere nie wieder losgelassen.</p>
+                
+                <p>Für mich ist Brauen wie Kochen auf Sterne-Niveau: Es geht darum, kreative Aromaideen präzise umzusetzen. Dabei weiß ich genau, wann beim Brauen Gelassenheit zählt – und wann absolute Exzellenz bei Hygiene und Rasttemperaturen entscheidend ist.</p>
+
+                <div class="philosophy-box">
+                    "Vom eigenen Garten in den Sudkessel: Mit Hopfen wie Cascade, Mandarina Bavaria oder Ariana erzeuge ich frische Grünhopfenbiere mit einzigartiger Aromatik."
+                </div>
+
+                <p>Heute teile ich dieses Wissen in Braukursen, Verkostungen und Brauereiführungen (u.a. Brauhaus Thombansen) in München und Lippstadt.</p>
+            </div>
+        </div>
+
+        <div class="feedback-quote">
+            <p>"Nochmals vielen Dank für den super interessanten Kurs in lockerer Atmosphäre. [...] Wir sind auf jeden Fall angefixt und kommen definitiv nochmal zu einem Kurs von Dir."</p>
+            <strong>— Florian, nach einem Braukurs</strong>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Biervergnügen
+    </footer>
+
+</body>
+</html>
