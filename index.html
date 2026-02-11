@@ -50,12 +50,13 @@
             100% { transform: translateY(-100vh); opacity: 0; }
         }
 
-        /* Navigation */
+        /* Navigation - Desktop & Mobile */
         nav {
             display: flex;
             justify-content: center;
-            padding: 2rem;
-            gap: 2rem;
+            flex-wrap: wrap;
+            padding: 2rem 1rem;
+            gap: 1rem 2rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-size: 0.8rem;
@@ -65,6 +66,7 @@
             color: var(--text);
             text-decoration: none;
             transition: color 0.3s;
+            white-space: nowrap;
         }
 
         nav a:hover { color: var(--copper); }
@@ -79,10 +81,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
         }
 
-        /* Hier kannst du später dein Bild einsetzen */
         .logo-placeholder {
             font-family: 'Playfair Display', serif;
             font-size: 6rem;
@@ -93,10 +93,11 @@
         }
 
         .hopfen-icon {
-            width: 50px; /* Breite deiner Grafik */
+            width: 50px;
             height: auto;
             vertical-align: middle;
-            margin-left: -10px; /* Schiebt das Bild leicht ins B */
+            margin-left: -10px;
+            opacity: 0.9;
         }
 
         .logo-subtitle {
@@ -113,8 +114,10 @@
             font-weight: 300;
             margin-top: 2rem;
             color: var(--copper);
+            padding: 0 10px;
         }
 
+        /* Inhalts-Bereich */
         .content {
             max-width: 800px;
             margin: 0 auto;
@@ -142,10 +145,11 @@
             color: var(--dark-malt);
         }
 
+        /* Footer */
         footer {
             margin-top: 50px;
             padding: 40px 20px;
-            border-top: 1px solid rgba(184, 115, 51, 0.3);
+            border-top: 1px solid rgba(184, 115, 51, 0.2);
             font-size: 0.75rem;
             text-align: center;
             opacity: 0.7;
@@ -154,11 +158,27 @@
         footer a {
             color: var(--text);
             text-decoration: none;
-            margin: 0 15px;
-            transition: color 0.3s;
+            margin: 0 10px;
         }
 
-        footer a:hover { color: var(--copper); }
+        /* Mobile Anpassungen (Smartphone) */
+        @media (max-width: 600px) {
+            nav {
+                gap: 0.8rem;
+                padding: 1.5rem 0.5rem;
+            }
+            nav a {
+                font-size: 0.7rem;
+                flex: 0 1 42%; /* 2 Spalten Layout */
+                border: 1px solid rgba(184, 115, 51, 0.2);
+                padding: 8px 5px;
+                text-align: center;
+            }
+            .logo-placeholder { font-size: 4.5rem; }
+            .logo-subtitle { font-size: 2rem; }
+            .hopfen-icon { width: 35px; }
+            .slogan { font-size: 0.7rem; letter-spacing: 3px; }
+        }
     </style>
 </head>
 <body>
@@ -176,7 +196,7 @@
         <div class="logo-area">
             <div class="logo-placeholder">
                 B<img src="hopfen.png" alt="🌿" class="hopfen-icon"> 
-                </div>
+            </div>
             <div class="logo-subtitle">Biervergnügen</div>
             <div class="slogan">Handwerk erleben. Geschmack entdecken.</div>
         </div>
@@ -196,7 +216,7 @@
     <footer>
         <a href="impressum.html">Impressum</a> | 
         <a href="datenschutz.html">Datenschutz</a>
-        <p style="margin-top: 15px;">&copy; 2026 Biervergnügen — Handwerk. Sinn. Erlebnis.</p>
+        <p style="margin-top: 15px;">&copy; 2026 Biervergnügen</p>
     </footer>
 
     <script>
