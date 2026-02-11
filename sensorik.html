@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sensorik & Tasting | Biervergnügen</title>
+    <title>Bier-Verkostung | Biervergnügen</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -53,52 +53,34 @@
         .intro-text {
             font-size: 1.1rem;
             margin-bottom: 3rem;
-            max-width: 700px;
+            max-width: 750px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        /* Aromen-Fokus Bereich */
         .sensory-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
-            margin: 4rem 0;
+            margin: 3rem 0;
         }
 
         .sensory-card {
             padding: 2rem;
             border: 1px solid rgba(229, 193, 133, 0.2);
-            transition: all 0.3s ease;
         }
 
-        .sensory-card:hover {
-            border-color: var(--copper);
-            background: rgba(184, 115, 51, 0.05);
-        }
+        .sensory-card h2 { font-size: 1.5rem; margin-top: 0; }
 
-        .sensory-card i {
-            display: block;
-            font-size: 2rem;
-            color: var(--copper);
-            margin-bottom: 1rem;
-        }
-
-        /* Fakten Box */
         .details-box {
             border-top: 1px solid var(--copper);
             border-bottom: 1px solid var(--copper);
             padding: 2rem 0;
             margin: 4rem 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             background: rgba(0,0,0,0.2);
-        }
-
-        .detail-item {
-            padding: 1rem;
-            min-width: 150px;
+            gap: 1rem;
         }
 
         .detail-item span {
@@ -106,22 +88,31 @@
             color: var(--copper);
             font-weight: bold;
             text-transform: uppercase;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
+            margin-bottom: 5px;
         }
 
-        .warning {
-            font-size: 0.8rem;
-            color: var(--light-gold);
-            font-style: italic;
-            margin-top: 2rem;
-            opacity: 0.8;
+        .btn-gold {
+            text-decoration: none;
+            display: inline-block;
+            color: var(--copper);
+            border: 1px solid var(--copper);
+            padding: 1rem 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.4s;
         }
 
-        footer { text-align: center; padding: 4rem 2rem; opacity: 0.6; font-size: 0.8rem; border-top: 1px solid rgba(184, 115, 51, 0.1); }
+        .btn-gold:hover {
+            background: var(--copper);
+            color: var(--dark-malt);
+        }
+
+        footer { text-align: center; padding: 4rem 2rem; opacity: 0.6; font-size: 0.8rem; }
         
         @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            nav a { flex: 0 1 40%; border: 1px solid rgba(184,115,51,0.2); padding: 8px; }
+            h1 { font-size: 2.2rem; }
+            nav a { flex: 0 1 40%; border: 1px solid rgba(184,115,51,0.2); padding: 8px; font-size: 0.7rem; }
         }
     </style>
 </head>
@@ -131,16 +122,17 @@
         <a href="index.html">Home</a>
         <a href="mich.html">Über mich</a>
         <a href="braukunst.html">Braukunst</a>
-        <a href="sensorik.html" style="color: var(--copper);">Sensorik</a>
+        <a href="sensorik.html" style="color: var(--copper);">Verkostung</a>
         <a href="downloads.html">Downloads</a>
     </nav>
 
     <div class="container">
-        <h1>Bier-Sensorik</h1>
-        <div class="subtitle">Aromen entdecken.</div>
+        <h1>Bier-Verkostung</h1>
+        <div class="subtitle">Aromen entdecken</div>
 
         <div class="intro-text">
-            <p>Bier kann mehr als nur Pils, Helles und Kölsch. Entdecken Sie die Aromenvielfalt, die Brauer aus den wenigen Zutaten in den unterschiedlichsten Bierstilen erzeugen.</p>
+            <p>Bier kann mehr als nur Pils, Helles und Kölsch. Entdecken Sie die Aromenvielfalt, die Brauer in den verschiedenen Ländern aus den wenigen Zutaten in den unterschiedlichsten Bierstilen erzeugen.</p>
+            <p>Die Verkostung gestalte ich individuell nach Ihren Wünschen, wie z.B. mit begleitender Brotzeit, am Ort Ihrer Wahl, Dauer oder speziellen Schwerpunkten.</p>
         </div>
 
         <div class="sensory-grid">
@@ -158,32 +150,30 @@
             </div>
         </div>
 
-        <p>Begleitet wird die Verkostung von einer kleinen Brotzeit zur Neutralisierung des Geschmacks.</p>
-
         <div class="details-box">
             <div class="detail-item">
                 <span>Dauer</span>
                 2 – 4 Stunden
             </div>
             <div class="detail-item">
+                <span>Teilnehmer</span>
+                2 bis max. 25 (ab 18 J.)
+            </div>
+            <div class="detail-item">
+                <span>Preis</span>
+                Je nach Umfang & Anzahl
+            </div>
+            <div class="detail-item">
                 <span>Ort</span>
                 Nach Absprache
             </div>
-            <div class="detail-item">
-                <span>Teilnahme</span>
-                Ab 18 Jahren
-            </div>
         </div>
 
-        <a href="mailto:biervergnuegen@gmail.com" style="text-decoration: none; display: inline-block; color: var(--copper); border: 1px solid var(--copper); padding: 1rem 2rem; text-transform: uppercase; letter-spacing: 2px;">Individuelles Event anfragen</a>
-
-        <div class="warning">
-            Bitte sorgen Sie für eine sichere Heimfahrt. Genuss mit Verantwortung.
-        </div>
+        <a href="mailto:biervergnuegen@gmail.com?subject=Verkostungsanfrage" class="btn-gold">Individuelle Verkostung anfragen</a>
     </div>
 
     <footer>
-        &copy; 2026 Biervergnügen — Handwerk. Sinn. Erlebnis.
+        &copy; 2026 Biervergnügen
     </footer>
 
 </body>
