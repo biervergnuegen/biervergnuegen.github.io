@@ -19,19 +19,23 @@
             color: var(--text);
             font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         nav {
             display: flex;
             justify-content: center;
-            padding: 2rem;
-            gap: 2rem;
+            flex-wrap: wrap;
+            padding: 2rem 1rem;
+            gap: 1rem 2rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-size: 0.8rem;
         }
 
-        nav a { color: var(--text); text-decoration: none; }
+        nav a { color: var(--text); text-decoration: none; transition: color 0.3s; }
         nav a:hover { color: var(--copper); }
 
         .container {
@@ -39,41 +43,93 @@
             margin: 0 auto;
             padding: 2rem;
             text-align: center;
+            flex: 1;
         }
 
         h1, h2 { font-family: 'Playfair Display', serif; color: var(--light-gold); }
         h1 { font-size: 3rem; margin-bottom: 0.5rem; }
         .subtitle { color: var(--copper); text-transform: uppercase; letter-spacing: 4px; font-size: 0.9rem; margin-bottom: 3rem; }
 
-        .kurs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-            text-align: left;
+        .intro-text {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
         }
-
-        .step {
-            border: 1px solid rgba(184, 115, 51, 0.3);
-            padding: 1.5rem;
-            transition: transform 0.3s;
-        }
-
-        .step:hover { transform: translateY(-5px); border-color: var(--copper); }
-        .step h3 { color: var(--copper); font-family: 'Playfair Display', serif; margin-top: 0; }
 
         .highlight-box {
-            background: rgba(184, 115, 51, 0.1);
-            padding: 2rem;
-            margin-top: 4rem;
-            border-left: 4px solid var(--copper);
+            background: rgba(184, 115, 51, 0.05);
+            padding: 2.5rem;
+            margin: 3rem 0;
+            border: 1px solid rgba(184, 115, 51, 0.2);
+            text-align: left;
+            display: inline-block;
+        }
+
+        .highlight-box h2 { text-align: center; margin-top: 0; margin-bottom: 1.5rem; }
+
+        .highlight-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .highlight-box li {
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .highlight-box li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--copper);
+            font-weight: bold;
+        }
+
+        .details-box {
+            border-top: 1px solid var(--copper);
+            border-bottom: 1px solid var(--copper);
+            padding: 2rem 0;
+            margin: 4rem 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            background: rgba(0,0,0,0.2);
+            gap: 1rem;
+        }
+
+        .detail-item span {
+            display: block;
+            color: var(--copper);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            margin-bottom: 5px;
+        }
+
+        .btn-gold {
+            text-decoration: none;
+            display: inline-block;
+            color: var(--copper);
+            border: 1px solid var(--copper);
+            padding: 1rem 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.4s;
+        }
+
+        .btn-gold:hover {
+            background: var(--copper);
+            color: var(--dark-malt);
         }
 
         footer { text-align: center; padding: 4rem 2rem; opacity: 0.6; font-size: 0.8rem; }
         
         @media (max-width: 600px) {
-            nav { gap: 1rem; font-size: 0.7rem; flex-wrap: wrap; }
-            h1 { font-size: 2rem; }
+            h1 { font-size: 2.2rem; }
+            nav a { flex: 0 1 40%; border: 1px solid rgba(184,115,51,0.2); padding: 8px; font-size: 0.7rem; }
         }
     </style>
 </head>
@@ -83,46 +139,54 @@
         <a href="index.html">Home</a>
         <a href="mich.html">Über mich</a>
         <a href="braukunst.html" style="color: var(--copper);">Braukunst</a>
-        <a href="sensorik.html">Sensorik</a>
+        <a href="sensorik.html">Verkostung</a>
         <a href="downloads.html">Downloads</a>
     </nav>
 
     <div class="container">
-        <h1>Die Braukunst</h1>
-        <div class="subtitle">Vom Korn zum Glas</div>
+        <h1>Braukunst</h1>
+        <div class="subtitle">Handwerk erleben</div>
 
-        <p>Ein Braukurs bei Biervergnügen ist kein trockener Theorieabend. Wir krempeln die Ärmel hoch. In gemütlicher Runde erleben wir, wie aus Wasser, Malz, Hopfen und Hefe ein Charakterbier entsteht.</p>
-
-        <div class="kurs-grid">
-            <div class="step">
-                <h3>1. Das Einmaischen</h3>
-                <p>Wir wecken die Enzyme. Malz trifft auf temperiertes Wasser – der Grundstein für Körper und Alkoholgehalt deines Bieres.</p>
-            </div>
-            <div class="step">
-                <h3>2. Das Läutern</h3>
-                <p>Geduld ist eine Zutat. Wir trennen die kostbare Würze von den festen Bestandteilen des Malzes (dem Treber).</p>
-            </div>
-            <div class="step">
-                <h3>3. Das Hopfenkochen</h3>
-                <p>Die Seele des Bieres. Wir geben den Hopfen zu und bestimmen Bittere und Aroma – von grasig-frisch bis herb-würzig.</p>
-            </div>
+        <div class="intro-text">
+            <p>Ein Braukurs bei Biervergnügen ist kein trockener Theorieabend. Wir maischen, läutern und stellen Dein erstes eigenes Bier an, welches Du zur Vergärung mit nach Hause nimmst.</p>
+            <p>In gemütlicher Runde erleben wir, wie aus Wasser, Malz, Hopfen und Hefe ein Charakterbier entsteht. Und dabei haben wir Zeit Biere zu verkosten und das notwendige Wissen und Tipps und Tricks zu teilen, um als frischer Hobbybrauer glücklich nach Hause zu gehen.</p>
         </div>
 
         <div class="highlight-box">
-            <h2>Was dich erwartet</h2>
-            <ul style="list-style: none; padding: 0; display: inline-block; text-align: left;">
-                <li>✓ 6-8 Stunden echtes Handwerk</li>
-                <li>✓ Sensorik-Schulung & Bierverkostung</li>
-                <li>✓ Umfangreiches Brauskript für zuhause</li>
-                <li>✓ Brotzeit & Fachsimpelei in entspannter Atmosphäre</li>
+            <h2>Was Dich erwartet</h2>
+            <ul>
+                <li>6-7 Stunden echtes Handwerk</li>
+                <li>Erlernen des gesamten Ablaufs für eigenständiges Brauen: von Rezeptauswahl über Zutaten bis zur Abfüllung</li>
+                <li>Du lernst, welches Equipment Du benötigst</li>
+                <li>Bierverkostung & Brotzeit in entspannter Atmosphäre</li>
+                <li>Du nimmst Deinen eigenen ersten Sud mit heim und kannst Dein erstes Bier 3-6 Wochen später verkosten</li>
             </ul>
         </div>
 
-        <a href="mailto:biervergnuegen@gmail.com" style="text-decoration: none; display: inline-block; margin-top: 3rem; color: var(--copper); border: 1px solid var(--copper); padding: 1rem 2rem; text-transform: uppercase; letter-spacing: 2px;">Jetzt Termin anfragen</a>
+        <div class="details-box">
+            <div class="detail-item">
+                <span>Dauer</span>
+                6 – 7 Stunden
+            </div>
+            <div class="detail-item">
+                <span>Teilnehmer</span>
+                2 bis max. 25 (ab 18 J.)
+            </div>
+            <div class="detail-item">
+                <span>Preis</span>
+                Je nach Umfang & Anzahl
+            </div>
+            <div class="detail-item">
+                <span>Ort</span>
+                Nach Absprache
+            </div>
+        </div>
+
+        <a href="mailto:biervergnuegen@gmail.com?subject=Braukurs Anfrage" class="btn-gold">Jetzt Braukurs anfragen</a>
     </div>
 
     <footer>
-        &copy; 2026 Biervergnügen — Handwerk. Sinn. Erlebnis.
+        &copy; 2026 Biervergnügen
     </footer>
 
 </body>
