@@ -24,7 +24,6 @@
             min-height: 100vh;
         }
 
-        /* Navigation */
         nav {
             display: flex;
             justify-content: center;
@@ -42,7 +41,7 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 4rem 2rem;
             flex: 1;
             text-align: center;
         }
@@ -50,70 +49,54 @@
         h1 { font-family: 'Playfair Display', serif; color: var(--light-gold); font-size: 3rem; margin-bottom: 1rem; }
         .subtitle { color: var(--copper); text-transform: uppercase; letter-spacing: 4px; font-size: 0.9rem; margin-bottom: 3rem; }
 
-        .download-list {
-            list-style: none;
-            padding: 0;
-            margin: 2rem 0;
-            text-align: left;
-        }
-
-        .download-item {
+        .password-box {
             background: rgba(184, 115, 51, 0.05);
             border: 1px solid rgba(184, 115, 51, 0.2);
-            margin-bottom: 1rem;
-            padding: 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s;
+            padding: 3rem 2rem;
+            margin-top: 2rem;
         }
 
-        .download-item:hover {
-            border-color: var(--copper);
-            background: rgba(184, 115, 51, 0.1);
-        }
-
-        .file-info h3 { margin: 0; color: var(--light-gold); font-size: 1.2rem; }
-        .file-info p { margin: 5px 0 0; font-size: 0.85rem; opacity: 0.7; }
-
-        .btn-download {
-            color: var(--copper);
-            text-decoration: none;
+        input[type="password"] {
+            background: rgba(255,255,255,0.05);
             border: 1px solid var(--copper);
-            padding: 0.5rem 1rem;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s;
+            color: white;
+            padding: 1rem;
+            font-size: 1.2rem;
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 1rem;
+            text-align: center;
         }
 
-        .btn-download:hover {
+        .btn-gold {
+            background: none;
+            border: 1px solid var(--copper);
+            color: var(--copper);
+            padding: 1rem 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.4s;
+            font-size: 1rem;
+        }
+
+        .btn-gold:hover {
             background: var(--copper);
             color: var(--dark-malt);
         }
 
+        #error-msg {
+            color: #ff4444;
+            margin-top: 1rem;
+            display: none;
+            font-size: 0.9rem;
+        }
+
         footer { text-align: center; padding: 3rem; opacity: 0.6; font-size: 0.8rem; }
 
-        /* Mobil-Optimierung: Größere Darstellung */
         @media (max-width: 600px) {
             h1 { font-size: 2.5rem; }
-            nav a { flex: 0 1 40%; border: 1px solid rgba(184,115,51,0.2); padding: 10px 5px; font-size: 0.75rem; text-align: center; }
-            
-            /* Inhalte für Mobile vergrößern */
-            .container { padding: 1rem; }
-            .download-item { 
-                flex-direction: column; 
-                text-align: center; 
-                gap: 1.5rem;
-                padding: 2rem 1.5rem; /* Mehr Platz für Finger-Bedienung */
-            }
-            .file-info h3 { font-size: 1.4rem; } /* Größere Schrift auf Mobile */
-            .file-info p { font-size: 1rem; }
-            .btn-download { 
-                width: 100%; 
-                padding: 1rem; 
-                font-size: 1rem; /* Größerer Button */
-            }
+            input[type="password"], .btn-gold { width: 100%; max-width: none; font-size: 1.2rem; padding: 1.2rem; }
         }
     </style>
 </head>
@@ -129,40 +112,44 @@
 
     <div class="container">
         <h1>Downloads</h1>
-        <div class="subtitle">Unterlagen & Begleitmaterial</div>
+        <div class="subtitle">Exklusiver Bereich für Kursteilnehmer</div>
 
-        <p>Hier finden Sie hilfreiche Dokumente rund um meine Kurse und die Welt des Bieres.</p>
+        <p>Bitte gib das Passwort ein, das du im Kurs erhalten hast, um auf die Unterlagen zuzugreifen.</p>
 
-        <ul class="download-list">
-            <li class="download-item">
-                <div class="file-info">
-                    <h3>Brauprotokoll</h3>
-                    <p>PDF | Vorlage für den eigenen Brautag</p>
-                </div>
-                <a href="#" class="btn-download">Download</a>
-            </li>
-
-            <li class="download-item">
-                <div class="file-info">
-                    <h3>Aromenrad</h3>
-                    <p>JPG | Zur Unterstützung bei Verkostungen</p>
-                </div>
-                <a href="#" class="btn-download">Download</a>
-            </li>
-
-            <li class="download-item">
-                <div class="file-info">
-                    <h3>Sortenübersicht</h3>
-                    <p>PDF | Kurze Geschichte ausgewählter Bierstile</p>
-                </div>
-                <a href="#" class="btn-download">Download</a>
-            </li>
-        </ul>
+        <div class="password-box">
+            <input type="password" id="passInput" placeholder="Passwort eingeben">
+            <br>
+            <button class="btn-gold" onclick="checkPassword()">Inhalte anzeigen</button>
+            <p id="error-msg">Falsches Passwort. Bitte versuch es erneut.</p>
+        </div>
     </div>
 
     <footer>
         &copy; 2026 Biervergnügen
     </footer>
+
+    <script>
+        function checkPassword() {
+            const pass = document.getElementById('passInput').value;
+            const error = document.getElementById('error-msg');
+            
+            // Hier dein gewünschtes Passwort eintragen (z.B. "Hopfen2026")
+            if (pass === "Biervergnuegen2026") {
+                // Wenn korrekt, leite zu einer versteckten Seite weiter
+                // Du müsstest eine Datei namens "geheim-unterlagen.html" erstellen
+                window.location.href = "geheim-unterlagen.html"; 
+            } else {
+                error.style.display = "block";
+            }
+        }
+
+        // Enter-Taste zum Absenden ermöglichen
+        document.getElementById('passInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
+        });
+    </script>
 
 </body>
 </html>
