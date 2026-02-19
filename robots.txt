@@ -1,0 +1,8 @@
+// User-agent: *: Gilt für alle Suchmaschinen-Crawler (Google, Bing, etc.).
+// Disallow: Verbietet das Crawlen der spezifischen Datei und des Ordners zu-loeschen.
+// Sitemap: Zeigt Google direkt den Weg zu deinem neuen Inhaltsverzeichnis.
+
+User-agent: *
+Disallow: /geheim-unterlagen.html
+
+Sitemap: https://xn--biervergngen-llb.com/sitemap.xml
